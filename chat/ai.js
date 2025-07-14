@@ -1,4 +1,4 @@
-var apiKey = "pk-";
+var apiKey = "pk-fire"; // fuck you, ness
 var baseUrl = "https://api.pawan.krd/cosmosrp/v1/chat/completions";
 var memory = [];
 memory.push({
@@ -190,7 +190,7 @@ for (var i = 0; i < memory.length; i++) {
         messageElement.querySelector("img").style.backgroundImage = `url(${userPersona.image})`;
     }
     if (name === "assistant") {
-        name = metadata.name;
+        name = botPersona.name;
         messageElement.querySelector("img").style.backgroundImage = `url(${metadata.img})`;
     }
     messageElement.classList.add(message.role);
@@ -247,7 +247,7 @@ function send() {
     // Add assistant message container
     var assistantMessageElement = messageTemplate.cloneNode(true);
     assistantMessageElement.classList.add("assistant");
-    assistantMessageElement.querySelector("b").innerHTML = metadata.name;
+    assistantMessageElement.querySelector("b").innerHTML = botPersona.name;
     assistantMessageElement.querySelector("img").style.backgroundImage = `url(${metadata.img})`;
     messagesElement.appendChild(assistantMessageElement);
     
