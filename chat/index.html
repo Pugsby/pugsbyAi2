@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pugsby AI | Chat with NAME</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div id="topbar"></div>
+    <div id="main">
+        <p onclick="window.history.back()" style="cursor: pointer; width: fit-content;">< Back</p>
+        <p id="nameOnTop">NAME</p>
+        <img src="hamburgerMenu.png" id="hamburgerMenuButton">
+        
+        <div id="messages">
+            <!--
+            <div class="message user">
+                <img src="">
+                <div><p><b>USER</b></p>
+                <p>Test</p></div>
+            </div>
+            <div class="message assistant">
+                <img src="">
+                <div><p><b>AI</b></p>
+                <p>Test</p></div>
+            </div>
+            -->
+        </div>
+        <div id="input" contenteditable="true">
+            
+        </div>
+        <div id="sendButton"></div>
+        <div id="hamburgerMenu">
+            <p id="apiSettingsButton">API Settings</p>
+            <p>Customization</p>
+        </div>
+    </div>
+    <div id="apiSettings">
+        <p id="closeApiSettings">X</p>
+        <h1>Api Settings</h1>
+        <p>Key:</p>
+        <input type="text" id="apiKey" value="pk-XXXXXXXXXXXXXXXX">
+        <p>Get a API key from <a href="https://discord.com/invite/pawan">Pawan.krd's Discord server</a></p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/marked@16.0.0/lib/marked.umd.js"></script>
+    <script src="ai.js"></script>
+</body>
+</html>

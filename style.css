@@ -1,0 +1,252 @@
+body {
+    background-color: #29282b;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #ffffff;
+    --displayWidth: 100vw;
+}
+#topbar {
+    width: calc(101vw + 50px);
+    height: 90px;
+    box-shadow: inset 0 -1px 10px 0px #ffffff;
+    margin: 0;
+    position: absolute;
+    top: -10px;
+    left: -10px;
+}
+#main {
+    width: 100vw;
+    max-width: 760px;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#nameOnTop {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    font-weight: bold;
+}
+#hamburgerMenuButton {
+    width: 20px;
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    filter: invert(1);
+    padding: 5px 10px 5px 10px;
+    background-color: #00000000;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+#hamburgerMenuButton:hover {
+    background-color: #0000001a;
+}
+#messages {
+    position: absolute;
+    top: 80px;
+    left: 0px;
+    width: 100vw;
+    max-width: 760px;
+    height: calc(100% - 170px);
+    overflow-y: scroll;
+}
+#messages .message img {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    margin-right: 5px;
+    background-color: #ffffff2d;
+    background-size: cover;
+    background-position: center;
+}
+#messages .message div p, b {
+    margin: 0;
+}
+#messages .message {
+    margin-top: 20px;
+    display: flex;
+}
+#messages .system {
+    display: none;
+}
+*::-webkit-scrollbar {
+    width: 10px;
+}
+*::-webkit-scrollbar-track {
+    background: #0000001a;
+    border-radius: 10000px;
+}
+*::-webkit-scrollbar-thumb {
+    background: #ffffff2d;
+    border-radius: 10000px;
+}
+#input {
+    background-color: #cccccc0e;
+    position: absolute;
+    bottom: 15px;
+    min-height: 75px;
+    width: 100%;
+    height: fit-content;
+    overflow-y: auto;
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+}
+#sendButton {
+    width: 32px;
+    height: 32px;
+    background-color: #0BA40045;
+    outline-style: solid;
+    outline-offset: -2px;
+    outline-width: 2px;
+    outline-color: #0BA400;
+    position: absolute;
+    right: 0;
+    bottom: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    background-image: url("send.png");
+    background-size: 28px;
+    filter: invert(1);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.italic {
+    color: rgba(255, 255, 255, 0.603);
+}
+#title {
+    position: absolute;
+    left: 5%;
+    top: 10px;
+    color: #F45BFF;
+}
+#title span {
+    font-size: small;
+    margin-left: 4px;
+}
+.indexhtml #topbar {
+    backdrop-filter: blur(10px);
+    position: fixed;
+    z-index: 9999999;
+}
+.indexhtml {
+    padding-top: 90px;
+    overflow-y: auto;
+}
+.indexhtml #main {
+    width: 90vw !important;
+    top: 110px;
+    height: fit-content;
+    max-width: 90vw;
+}
+.characterCard {
+    width: 300px;
+    background-color: rgba(0, 0, 0, 0.428);
+    border-radius: 8px;
+    display: flex;
+    margin-top: 10px;
+}
+.characterCard img {
+    height: 100px;
+    width: 100px;
+    border-radius: 8px;
+    margin-right: 4px;
+}
+.characterCard div * {
+    margin: 0;
+}
+.characterCard div {
+    display: block;
+    margin-top: 10px;
+}
+.characterCard div p {
+    text-wrap: stable;
+    width: 100%;
+}
+button {
+    background-color: #F45BFF;
+    border: none;
+    border-radius: 8px;
+    padding: 5px 10px 5px 10px;
+    color: rgb(0, 0, 0);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+button:hover {
+    background-color: #c247cb;
+}
+#characters {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+input[type="text"] {
+    background-color: #cccccc0e;
+    border: none;
+    border-radius: 8px;
+    padding: 5px 10px 5px 10px;
+    margin-top: 10px;
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+a {
+    color: #c247cb;
+    text-shadow: 0 0 10px #c247cb;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+a:hover {
+    color: #F45BFF;
+    text-shadow: 0 0 10px #F45BFF;
+}
+#hamburgerMenu {
+    position: absolute;
+    width: 130px;
+    height: fit-content;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.119);
+    right: 2px;
+    border-radius: 8px;
+    display: none;
+}
+#hamburgerMenu p {
+    background-color: #00000000;
+    cursor: pointer;
+    height: fit-content;
+    margin: 0;
+    padding: 8px;
+    display: block;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+#hamburgerMenu p:hover {
+    background-color: #0000003d;
+}
+#apiSettings {
+    position: absolute;
+    width:70vh;
+    height: 60vh;
+    max-width: 90vw;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.487);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    overflow-y: auto;
+    border-radius: 8px;
+    display: none;
+}
+#closeApiSettings {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
