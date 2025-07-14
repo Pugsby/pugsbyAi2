@@ -10,16 +10,59 @@
     <div id="topbar">
         <h1 id="title">Pugsby AI<span>beta | Create Character</span></h1>
     </div>
-    <div id="main">
-        <p>Character editor coming soon, Import them in tavernai format.</p>
+    <div id="main" class="editor">
+        <!-- <p>Character editor coming soon, Import them in tavernai format.</p>
         <a href="https://zoltanai.github.io/character-editor/">https://zoltanai.github.io/character-editor/</a><br><br>
         <input type="text" id="imageUrl" placeholder="Image URL"><br>
         <input type="file" id="fileInput">
         <p>Once you've imported your character, make sure the information is correct and click "Save".</p>
         <p>Also, you have to add the image yourself due to limitations of the tavernai format.</p>
         <div id="info"></div>
+        <button onclick="window.location.href='../'">Back</button> -->
+        <h1>Import</h1>
+        <p>If you have a character in tavernai format, you can import it here. Images won't work, just json files.</p>
+        <p>I will soon add the ability to import from images.</p>
+        <input type="file" id="fileInput" accept=".json">
+        <h1>Metadata</h1>
+        <p>These are things that the bot will not be able to access, but it's visible to the user in some places.</p>
+        <p>The bot will NOT be able to access these*.</p>
+        <h2>Image</h2>
+        <p>The image will be used as the bot's profile picture.</p>
+        <p>Due to limitations of the tavernai format, you have to add the image yourself, assuming you imported it from json.</p>
+        <p>If you want to use a image from your computer, you can either upload it to a image sharing website or use <a href="https://ezgif.com/image-to-datauri">Image to Data:URI</a>.</p>
+        <input type="text" id="imageUrl" placeholder="Image URL">
+        <p>Image can be anything, it will be previewed here:</p>
+        <center><img src="" id="imagePreview" width="50vw"></center>
+        <h2>Name</h2>
+        <p>The name of the bot.</p>
+        <p>* The bot WILL be able to access this IF there is no set Chat Name.</p>
+        <input type="text" id="name" placeholder="Name">
+        <h1>Persona</h1>
+        <p>This is what the bot will be able to access, this is not visible to the user with some exceptions.</p>
+        <h2>Chat Name</h2>
+        <p>This is what the bot will think their name is, this is what will displayed in chat.</p>
+        <p>* Users can see this.</p>
+        <input type="text" id="chatName" placeholder="Chat Name">
+        <h2>Introduction</h2>
+        <p>This is the first message the bot will send to the user.</p>
+        <p>* Users can see this.</p>
+        <textarea id="introduction" placeholder="Introduction"></textarea>
+        <h2>Character Persona</h2>
+        <p>Also known as Description to TavernAI or Long Description to character.ai. This is the mind and heart of your character, this is who your character is.</p>
+        <textarea id="characterPersona" placeholder="Character Persona"></textarea>
+        <h2>Summary</h2>
+        <p>In a few words, describe your character. Also known as Short Description to character.ai.</p>
+        <textarea id="summary" placeholder="Summary"></textarea>
+        <h2>Example Mesesages</h2>
+        <p>Examples of what your character would say to the user, also known as Definition to character.ai, or Examples of Dialogue to Tavernai.</p>
+        <textarea id="exampleMessages" placeholder="Example Mesesages"></textarea>
+        <h2>Scenario</h2>
+        <p>This is the scenario the bot will be in, this is what the bot will do.</p>
+        <textarea id="worldScenario" placeholder="Scenario"></textarea><br>
         <button onclick="window.location.href='../'">Back</button>
+        <button onclick="save()">Save</button><br><br>
     </div>
+    <script src="../global.js"></script>
     <script src="create.js"></script>
 </body>
 </html>
