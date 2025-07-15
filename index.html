@@ -3,68 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pugsby AI | Chat with NAME</title>
-    <link rel="stylesheet" href="../style.css">
+    <title>Pugsby AI</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div id="topbar"></div>
-    <div id="main">
-        <p onclick="window.history.back()" style="cursor: pointer; width: fit-content;">< Back</p>
-        <p id="nameOnTop">NAME</p>
-        <img src="hamburgerMenu.png" id="hamburgerMenuButton">
+<body class="indexhtml">
+    <div id="topbar">
+        <h1 id="title">Pugsby AI<span>beta</span></h1>
         
-        <div id="messages">
-            <!--
-            <div class="message user">
-                <img src="">
-                <div><p><b>USER</b></p>
-                <p>Test</p></div>
-            </div>
-            <div class="message assistant">
-                <img src="">
-                <div><p><b>AI</b></p>
-                <p>Test</p></div>
-            </div>
-            -->
-        </div>
-        <div id="input" contenteditable="true">
+    </div>
+    <div id="main" style="width: 90vw;">
+        <img src="banner.png" width="100%" style="border-radius: 8px; box-shadow: 0 0 10px #000000;">
+        <p>PugsbyAI is in early beta, the home page is very basic and is just a list of characters.</p>
+        <p>Also, don't get excited when chatting, your chats wont be saved (yet)</p>
+        <p>In a future update, you will be able to save your chats and load them later, you will also be able to make custom user personas.</p>
+        <p>If you want to create user personas now, you can fork <a href="https://github.com/Pugsby/pugsbyAi2">this repository</a> and create your own personas.</p>
+        <p>By default, you won't see any characters, make them yourself <a href="create/index.html">here</a>.</p>
+        <div id="characters">
             
         </div>
-        <div id="sendButton"></div>
-        <div id="hamburgerMenu">
-            <p id="apiSettingsButton">API Settings</p>
-            <p id="customizationSettingsButton">Customization</p>
-        </div>
-    </div>
-    <div id="apiSettings">
-        <p id="closeApiSettings">X</p>
-        <h1>Api Settings</h1>
-        <p>Key:</p>
-        <input type="text" id="apiKey" value="pk-XXXXXXXXXXXXXXXX">
-        <p>Get a API key from <a href="https://discord.com/invite/pawan">Pawan.krd's Discord server</a></p>
-    </div>
-    <div id="customizationSettings">
-        <p id="closeCustomizationSettings">X</p>
-        <h1>Customization Settings</h1>
-        <h2>Text</h2>
-        <p>Text Size:</p>
-        <input type="range" id="textSize" min="10" max="50" value="16"><b id="textSizeValue">16px</b><br>
-        <p>Text Color:</p>
-        <input type="color" id="textColor" value="#ffffff"><b id="textColorValue">#ffffff</b><br>
-        <h2>Background</h2>
-        <p>Background Color:</p>
-        <input type="color" id="backgroundColor" value="#29282b"><b id="backgroundColorValue">#29282b</b><br>
-        <p>Background Image:</p>
-        <input type="text" id="backgroundImage" placeholder="Image URL"><b id="backgroundImageValue"></b><br>
-        <input type="file" id="backgroundImageFile"><br>
-        <h4>Background Image Style:</h3>
-        <div style="display: none;"><p>Opacity:</p>
-        <input type="range" id="backgroundImageOpacity" min="0" max="1" step="0.01" value="1"><b id="backgroundImageOpacityValue">1</b><br>
-        </div><p>Blur:</p>
-        <input type="range" id="backgroundImageBlur" min="0" max="100" step="1" value="0"><b id="backgroundImageBlurValue">0</b><br>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/marked@16.0.0/lib/marked.umd.js"></script>
-    <script src="../global.js"></script>
-    <script src="ai.js"></script>
+    <script src="global.js"></script>
+    <script src="frontpage.js"></script>
 </body>
 </html>
