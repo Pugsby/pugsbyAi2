@@ -283,12 +283,12 @@ sendButtonElement.addEventListener("click", function() {
 
 var hamburgerMenuElement = document.getElementById("hamburgerMenuButton");
 hamburgerMenuElement.addEventListener("click", function() {
-    setTimeout(function() {
-        document.getElementById("hamburgerMenu").style.display = "block";
-    }, 1);
+    document.getElementById("hamburgerMenu").style.display = "block";
 });
 document.addEventListener("click", function(event) {
-    document.getElementById("hamburgerMenu").style.display = "none";
+    if (event.target.id !== "hamburgerMenuButton") {
+        document.getElementById("hamburgerMenu").style.display = "none";
+    }
 });
 apiKey = localStorage.getItem("pugsbyAi/apiKey");
 if (apiKey === null) {
@@ -305,3 +305,96 @@ document.getElementById("apiSettingsButton").addEventListener("click", function(
 document.getElementById("closeApiSettings").addEventListener("click", function(event) {
     document.getElementById("apiSettings").style.display = "none";
 });
+document.getElementById("customizationSettingsButton").addEventListener("click", function(event) {
+    document.getElementById("customizationSettings").style.display = "block";
+});
+document.getElementById("closeCustomizationSettings").addEventListener("click", function(event) {
+    document.getElementById("customizationSettings").style.display = "none";
+});
+var textSize = localStorage.getItem("pugsbyAi/textSize");
+if (textSize === null) {
+    textSize = 16;
+}
+document.getElementById("textSize").value = textSize;
+document.getElementById("textSizeValue").innerHTML = textSize + "px";
+document.getElementById("textColor").value = localStorage.getItem("pugsbyAi/textColor");
+updateTextStyling();
+if (localStorage.getItem("pugsbyAi/textColor") === null) {
+    document.getElementById("textColor").value = "#ffffff";
+}
+document.getElementById("textSize").addEventListener("input", function(event) {
+    document.getElementById("textSizeValue").innerHTML = this.value + "px";
+    localStorage.setItem("pugsbyAi/textSize", this.value);
+    textSize = this.value;
+    updateTextStyling();
+});
+document.getElementById("textColor").addEventListener("input", function(event) {
+    document.getElementById("textColorValue").innerHTML = this.value;
+    localStorage.setItem("pugsbyAi/textColor", this.value);
+    updateTextStyling();
+});
+function updateTextStyling() {
+    document.getElementById("messages").style.fontSize = document.getElementById("textSize").value + "px";
+    console.log(textSize);
+    document.getElementById("messages").style.color = document.getElementById("textColor").value;
+}
+document.getElementById("backgroundColor").value = localStorage.getItem("pugsbyAi/backgroundColor");
+if (localStorage.getItem("pugsbyAi/backgroundColor") === null) {
+    document.getElementById("backgroundColor").value = "#29282b";
+}
+document.getElementById("backgroundColor").addEventListener("input", function(event) {
+    document.getElementById("backgroundColorValue").innerHTML = this.value;
+    localStorage.setItem("pugsbyAi/backgroundColor", this.value);
+    updateBackgroundStyling();
+});
+document.getElementById("backgroundImageOpacity").value = localStorage.getItem("pugsbyAi/backgroundImageOpacity");
+if (localStorage.getItem("pugsbyAi/backgroundImageOpacity") === null) {
+    document.getElementById("backgroundImageOpacity").value = 1;
+}
+document.getElementById("backgroundImageOpacity").addEventListener("input", function(event) {
+    document.getElementById("backgroundImageOpacityValue").innerHTML = this.value;
+    localStorage.setItem("pugsbyAi/backgroundImageOpacity", this.value);
+    updateBackgroundStyling();
+});
+document.getElementById("backgroundImageBlur").value = localStorage.getItem("pugsbyAi/backgroundImageBlur");
+if (localStorage.getItem("pugsbyAi/backgroundImageBlur") === null) {
+    document.getElementById("backgroundImageBlur").value = 0;
+}
+document.getElementById("backgroundImageBlur").addEventListener("input", function(event) {
+    document.getElementById("backgroundImageBlurValue").innerHTML = this.value;
+    localStorage.setItem("pugsbyAi/backgroundImageBlur", this.value);
+    updateBackgroundStyling();
+});
+document.getElementById("backgroundImage").value = localStorage.getItem("pugsbyAi/backgroundImage");
+if (localStorage.getItem("pugsbyAi/backgroundImage") === null) {
+    document.getElementById("backgroundImage").value = "";
+}
+document.getElementById("backgroundImage").addEventListener("input", function(event) {
+    document.getElementById("backgroundImageValue").innerHTML = this.value;
+    localStorage.setItem("pugsbyAi/backgroundImage", this.value);
+    updateBackgroundStyling();
+});
+document.getElementById("backgroundImageFile").addEventListener("change", function(event) {
+    var file = this.files[0];
+    var reader = new FileReader();
+    reader.onload = function(event) {
+        document.getElementById("backgroundImage").value = event.target.result;
+        localStorage.setItem("pugsbyAi/backgroundImage", event.target.result);
+        updateBackgroundStyling();
+    };
+    reader.readAsDataURL(file);
+});
+function updateBackgroundStyling() {
+    document.body.style.backgroundColor = document.getElementById("backgroundColor").value;
+    if (document.getElementById("backgroundImage").value !== "") {
+        document.body.style.backgroundImage = `url(${document.getElementById("backgroundImage").value})`;
+        document.body.style.backgroundSize = "cover";
+        document.body.style.backgroundRepeat = "no-repeat";
+        document.body.style.backgroundPosition = "center";
+    } else {
+        document.body.style.backgroundImage = "none";
+    }
+    document.getElementById("backgroundImageBlurValue").innerHTML = document.getElementById("backgroundImageBlur").value;
+    document.getElementById("main").style.backdropFilter = `blur(${document.getElementById("backgroundImageBlur").value}px)`;
+}
+updateBackgroundStyling();
