@@ -231,7 +231,7 @@ a:hover {
 #hamburgerMenu p:hover {
     background-color: #0000003d;
 }
-#apiSettings {
+#apiSettings, #customizationSettings {
     position: absolute;
     width:70vh;
     height: 60vh;
@@ -245,7 +245,7 @@ a:hover {
     border-radius: 8px;
     display: none;
 }
-#closeApiSettings {
+#closeApiSettings, #closeCustomizationSettings {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -254,4 +254,11 @@ a:hover {
 }
 .editor * {
     margin: 0;
+}
+#customizationSettings * {
+    margin: 0;
+}
+input[type="color"] {
+    background-color: #00000000;
+    border: none;
 }
